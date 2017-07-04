@@ -79,8 +79,14 @@ for (let column of columns) {
 // https://www.instapaper.com/api/simple
 function pushToInstapaper(link, column) {
   var linkComp = link.split('/');
+  if( !linkComp[7] || !linkComp[8] )
+    return console.log('Unknown URL schema');
+  var articleType = 'apple_sub';
+  // depends on sec, the link structure is different
+  if ( column.secid == '15307' )
+    articleType = 'apple';
   // constructure the article links that used backend rendering
-  var articleLink = 'http://s.nextmedia.com/apple_sub/a.php?i=' + linkComp[7] + '&sec_id=' + column.secid + '&a=' + linkComp[8];
+  var articleLink = 'http://s.nextmedia.com/' + articleType + '/a.php?i=' + linkComp[7] + '&sec_id=' + column.secid + '&a=' + linkComp[8];
   console.log('Article pushing to Instapaper...');
   return request('GET', 'http://www.instapaper.com/api/add?username=' + instapaperConfig.username + '&password=' + instapaperConfig.password + '&url=' + encodeURIComponent(articleLink) );
 }
