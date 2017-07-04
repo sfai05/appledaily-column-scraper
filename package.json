@@ -1,0 +1,26 @@
+{
+  "name": "appledaily-column-scraper",
+  "version": "1.0.0",
+  "description": "Scraper new articles in appledaily column and push to instapaper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfai05/appledaily-column-scraper.git"
+  },
+  "author": "Chan Shing Fai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfai05/appledaily-column-scraper/issues"
+  },
+  "homepage": "https://github.com/sfai05/appledaily-column-scraper#readme",
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "http": "0.0.0",
+    "lodash": "^4.17.4",
+    "parse5": "^3.0.2",
+    "sync-request": "^4.1.0"
+  }
+}
